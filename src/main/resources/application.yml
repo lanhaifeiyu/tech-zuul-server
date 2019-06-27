@@ -1,11 +1,13 @@
 zuul:
     routes:
         zuul-gateway:
-            path: /zuul/blog/**
-            serviceId: tech-blog-provicer
+            path: /blog/**
+            serviceId: tech-blog-provider
     host:
         socket-timeout-millis: 600000
         connect-timeout-millis: 600000
+    add-host-header: true
+    retryable: true
 hystrix:
     command:
         default:
